@@ -1,8 +1,9 @@
 
 import mongoose from "mongoose"
+import environment from "../config/environment"
 
 const connect = () => {
-    mongoose.connect('mongodb+srv://shubhamvig:8OJbV2yjpvVYtcaP@cluster0.0vqoahc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0').then(() => console.log("mongdb connected")).catch((err: any) => console.log(err))
+    mongoose.connect(environment?.mongodbUrl).then(() => console.log("mongdb connected")).catch((err: any) => console.log(err))
 
 }
 
